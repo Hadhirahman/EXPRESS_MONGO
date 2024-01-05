@@ -1,0 +1,100 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>admin page</h1>
+    <a href="/admin/addproduct"><button>Add product</button></a>
+    <br>
+    <br>
+    <br>
+    <a href="/admin/productlist"><button>list product</button></a>
+    <br>
+    <br>
+
+    <br>
+    <a href="/admin/adminuserlist"><button>user List</button></a>
+
+    <br>
+    <br>
+    <br>
+
+    <a href="/logout">Logout here</a>
+    
+</body>
+</html> -->
+
+
+
+
+<!-- views/adminpage.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Page</title>
+  <!-- Add Bootstrap CSS link here -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <style>
+    body {
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    button {
+      width: 150px;
+      height: 80px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Admin Page</h1>
+
+  <div class="btn-group">
+    <a href="/admin/addproduct"><button class="btn btn-primary">Add Product</button></a>
+    <a href="/admin/productlist"><button class="btn btn-success">List Products</button></a>
+    <a href="/admin/adminuserlist"><button class="btn btn-info">User List</button></a>
+  </div>
+
+  <a href="/logout" class="btn btn-danger">Logout</a>
+
+  <!-- Add Bootstrap JS and Popper.js scripts here -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

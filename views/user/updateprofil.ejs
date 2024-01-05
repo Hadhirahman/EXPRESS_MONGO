@@ -1,0 +1,137 @@
+<!-- views/profileUpdate.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Update</title>
+  <style>
+/* public/styles/profileUpdate.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #3494e6, #ec6ead);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.fixed,
+input,
+select {
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: #ff5757;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+body {
+  background: #3494e6; /* Darken the background gradient */
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  text-align: center;
+  color: #333; /* Darken the text color */
+}
+
+form {
+  background: #fff; /* Add a white background to the form */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+
+  </style>
+  <link rel="stylesheet" href="/styles/profileUpdate.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Profile Update</h1>
+    <form action="/updateprofile/<%= profile._id %>" method="post" enctype="">
+      <label for="username">Username:</label>
+      <div class="fixed" id="username" name="username" value="" required><%= profile.fullname %></div>
+
+
+      <label for="Age">Age:</label>
+      <input type="number" id="age" name="age" value="<%=profile.age%>" required>
+      <% if (profile.profileDetails && profile.profileDetails.length > 0) { %>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" value="<%=profile.profileDetails[0].phoneNumber%>" required>
+      
+
+      <label for="Gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="Dob">Date of Birth:  <%=profile.profileDetails[0].dob %></label>
+      <input type="date" id="dob" name="dob" value="" required>
+      <%}else{ %>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" value="" required>
+        
+  
+        <label for="Gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+  
+        <label for="Dob">Date of Birth: </label>
+        <input type="date" id="dob" name="dob" value="" required>
+
+        <%}%>
+      <button type="submit">Update Profile</button>
+    </form>
+    <a href="/user" class="btn btn-secondary position-absolute top-0 end-0 m-2">Go to Home</a>
+  </div>
+</body>
+
+</html>

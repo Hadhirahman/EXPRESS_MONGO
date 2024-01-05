@@ -1,0 +1,126 @@
+<!-- views/addProduct.ejs
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product</title>
+</head>
+<body>
+  <h1>Add Product</h1>
+  <form action="/admin/addproduct" method="post" enctype="multipart/form-data">
+    <label for="productName">Product Name:</label>
+    <input type="text" id="productName" name="productName" required>
+    <br>
+    <label for="productDescription">Product Description:</label>
+    <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
+    <br>
+    <label for="productPrice">Product Price:</label>
+    <input type="number" id="productPrice" name="productPrice" min="0" step="0.01" required>
+    <br>
+    <label for="productImage">Product Image:</label>
+    <input type="file" id="productImage" name="productImage" accept="image/*" required>
+    <br>
+    <a href=""><button type="">Add Product</button></a>
+    <a href="/admin/admin">Home</a>
+  </form>
+</body>
+</html> -->
+
+
+<!-- views/addProduct.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product</title>
+  <!-- Add Bootstrap CSS link here -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <style>
+    body {
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007bff;
+      margin-top: 15px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Add Product</h1>
+
+  <form action="/admin/addproduct" method="post" enctype="multipart/form-data">
+    <label for="productName">Product Name:</label>
+    <input type="text" id="productName" name="productName" class="form-control" required>
+    <br>
+
+    <label for="productDescription">Product Description:</label>
+    <textarea id="productDescription" name="productDescription" rows="4" class="form-control" required></textarea>
+    <br>
+
+    <label for="productPrice">Product Price:</label>
+    <input type="number" id="productPrice" name="productPrice" min="0" step="0.01" class="form-control" required>
+    <br>
+
+    <label for="productImage">Product Image:</label>
+    <input type="file" id="productImage" name="productImage" accept="image/*" required class="form-control-file">
+    <br>
+
+    <button type="submit" class="btn btn-success">Add Product</button>
+    <a href="/admin/admin" class="btn btn-primary">Home</a>
+  </form>
+
+  <!-- Add Bootstrap JS and Popper.js scripts here -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+</html>
