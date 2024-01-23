@@ -4,6 +4,7 @@ const bycrypt=require('bcrypt')
 const userdatas=require("../models/userschema")
 const productschema=require("../models/productschema")
 const profileschema=require("../models/profileschema")
+const userscema=require("../models/userschema")
 const msg={errs:""}
 const mongoose=require("mongoose")
 
@@ -209,8 +210,14 @@ postporifileupdate:async (req, res) => {
   try {
     if(req.session.tocken){
 
-      const userId = req.params.userId;
-      const { phoneNumber, gender, dob } = req.body;
+      const userId = req.session.tocken;
+      const { phoneNumber, gender, dob,age } = req.body;
+
+      const userupdate=await userscema.findOneAndUpdate({_id:new mongoose.Types.ObjectId(userId)},
+      {age},
+      { new: true, upsert: true }
+      )
+
      const  userProfile = await profileschema.findOneAndUpdate(
         { userId:new mongoose.Types.ObjectId(userId) },
         { phoneNumber, gender, dob },

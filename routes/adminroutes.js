@@ -1,9 +1,9 @@
 const express=require("express")
 const router = express.Router()
 const multer=require("multer")
-const storage=require("../middleware/multer")
-const upload = multer({ storage: storage });
-// const path = require('path');
+const upload=require("../middleware/multer")
+
+
 const productschema=require("../models/productschema")
 
 const {getAddlogin,getadmin,postLoging, getlogout, Addproduct, postAddproduct, getproductlist,getproductdelete,getproductedit,postproductedit,getuserlist,getdeleteuser}=require('../controllers/adminControl').adobj

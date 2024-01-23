@@ -15,7 +15,7 @@ router.post("/signup",validation,postsignup)
 router.post("/login",postlogin)
 router.get("/profile/:userId",getprofile)
 router.get("/profileupdate/:userId",getprofileupdate)
-router.post("/updateprofile/:userId",postporifileupdate)
+router.post("/updateprofile",postporifileupdate)
 
 
 module.exports=router
